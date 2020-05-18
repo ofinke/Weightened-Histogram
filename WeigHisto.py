@@ -24,11 +24,10 @@ class WeigHisto():
 		# CYCLE THROUGH BINS
 		self.hiVal = np.zeros(len(self.bins))
 		i = 0
-		while i < (len(self.bins) - 1): 
+		for i in range(self.bins.size - 1): 
 			# create mask for specific bin 
 			mask = (self.data > self.bins[i]) & (self.data < self.bins[i+1])
 			self.hiVal[i] = np.sum(self.weight[mask])
-			i += 1
 
 	def PlotDetail(self):
 		# DATA HEATMAP
